@@ -109,7 +109,7 @@ namespace SuperBMDLib
             else
             {
                 Console.Write("Finishing the Job...");
-                mod.ExportBMD(cmd_args.output_path, cmd_args.output_bdl);
+                mod.ExportBMD(cmd_args.output_path, cmd_args.output_bdl,cmd_args.drw1DupeBug);
                 Console.WriteLine("✓");
             }
 
@@ -151,6 +151,7 @@ namespace SuperBMDLib
             Console.WriteLine("\t-b/--exportobj\t\t\t\tIf input is BMD/BDL, export the model as Wavefront OBJ instead of Collada (.DAE).");
             Console.WriteLine("\t-b/--texfloat32\t\t\t\tOn conversion into BMD, always store texture UV coordinates as 32 bit floats.");
             Console.WriteLine("\t-b/--degeneratetri\t\t\tOn conversion into BMD, write triangle lists as triangle strips using degenerate triangles.");
+            Console.WriteLine("\t-b/--drw1bug\t\t\t\tRecreate a bug in Nintendo's official tools that causes duplicate bone envelope indexes.");
             Console.WriteLine();
             Console.WriteLine("\t-b/--profile\t\t\t\tGenerate a report with information on the .BMD/.BDL (Other formats not supported)");
             Console.WriteLine();

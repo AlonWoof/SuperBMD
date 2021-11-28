@@ -27,6 +27,8 @@ namespace SuperBMDLib
         public string hierarchyPath;
         public bool exportAnims;
 
+        public bool drw1DupeBug;
+
         /// <summary>
         /// Initializes a new Arguments instance from the arguments passed in to SuperBMD.
         /// </summary>
@@ -51,6 +53,7 @@ namespace SuperBMDLib
             dumpHierarchy = false;
             hierarchyPath = "";
             exportAnims = false;
+            drw1DupeBug = false;
 
             int positional_arguments = 0;
 
@@ -120,6 +123,9 @@ namespace SuperBMDLib
                         break;
                     case "--dumphierarchy":
                         dumpHierarchy = true;
+                        break;
+                    case "--drw1bug":
+                        drw1DupeBug = true;
                         break;
                     case "--hierarchy":
                         if (i + 1 >= args.Length)

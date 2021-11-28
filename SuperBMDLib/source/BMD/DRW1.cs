@@ -132,15 +132,18 @@ namespace SuperBMDLib.BMD
             Console.Write(".✓");
         }
 
-        public void Write(EndianBinaryWriter writer)
+        public void Write(EndianBinaryWriter writer, bool dupeBug)
         {
 
-            for (int i = 0; i < MeshWeights.Count; i++)
+            if (dupeBug)
             {
-                if (WeightTypeCheck[i])
+                for (int i = 0; i < MeshWeights.Count; i++)
                 {
-                    WeightTypeCheck.Add(true);
-                    Indices.Add(Indices[i]);
+                    if (WeightTypeCheck[i])
+                    {
+                        WeightTypeCheck.Add(true);
+                        Indices.Add(Indices[i]);
+                    }
                 }
             }
 

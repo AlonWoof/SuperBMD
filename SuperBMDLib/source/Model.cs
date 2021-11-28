@@ -300,7 +300,7 @@ namespace SuperBMDLib
             }
         }
 
-        public void ExportBMD(string fileName, bool isBDL)
+        public void ExportBMD(string fileName, bool isBDL, bool dupeBug)
         {
             string outDir = Path.GetDirectoryName(fileName);
             string fileNameNoExt = Path.GetFileNameWithoutExtension(fileName);
@@ -334,7 +334,7 @@ namespace SuperBMDLib
                 Scenegraph.Write(writer, packetCount, vertexCount);
                 VertexData.Write(writer);
                 SkinningEnvelopes.Write(writer);
-                PartialWeightData.Write(writer);
+                PartialWeightData.Write(writer,dupeBug);
                 Joints.Write(writer);
                 Shapes.Write(writer);
                 Materials.Write(writer);
