@@ -134,6 +134,16 @@ namespace SuperBMDLib.BMD
 
         public void Write(EndianBinaryWriter writer)
         {
+
+            for (int i = 0; i < MeshWeights.Count; i++)
+            {
+                if (WeightTypeCheck[i])
+                {
+                    WeightTypeCheck.Add(true);
+                    Indices.Add(Indices[i]);
+                }
+            }
+
             long start = writer.BaseStream.Position;
 
             writer.Write("DRW1".ToCharArray());
